@@ -9,10 +9,9 @@ export class ApiClient {
     const res = await fetch(`https://api.github.com${path}`, {
       method,
       headers: {
+        Accept: "application/vnd.github+json",
         Authorization: `bearer ${this.token}`,
-        "Content-Type": "application/json",
         "X-GitHub-Api-Version": "2022-11-28",
-        Accept: "application/vnd.github.v3+json",
       },
       body: JSON.stringify(body),
     });
